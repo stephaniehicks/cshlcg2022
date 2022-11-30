@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,7 +94,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./reproducible-res.html" rel="next">
+<link href="./exercises-01.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -169,12 +169,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./exercises-01.html" class="sidebar-item-text sidebar-link">Group work</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./reproducible-res.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducible Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises-01.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  <a href="./exercises-02.html" class="sidebar-item-text sidebar-link">Group work</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises-02.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  <a href="./exercises-03.html" class="sidebar-item-text sidebar-link">Workshop</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -228,16 +233,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></h1>
 </div>
 
-<div>
-  <div class="description">
-    Course material (lectures and workshops) from Stephanie Hicks
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -249,7 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <section id="acknowledgements" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">1.1</span> Acknowledgements</h2>
-<p>Material for this lecture was borrowed and adopted from</p>
+<p>Material for this chapter was borrowed and adopted from</p>
 <ul>
 <li><a href="https://rdpeng.github.io/Biostat776/lecture-introduction-and-overview.html" class="uri">https://rdpeng.github.io/Biostat776/lecture-introduction-and-overview.html</a></li>
 <li><a href="https://rafalab.github.io/dsbook" class="uri">https://rafalab.github.io/dsbook</a></li>
@@ -423,7 +424,6 @@ Tip
 </ul>
 </div>
 </div>
-<p>If things don’t work, ask for help in the Courseplus discussion board.</p>
 <p>I personally only have experience with Mac, but everything should work on all the standard operating systems (Windows, Mac, and even Linux).</p>
 </section>
 <section id="rstudio-default-options" class="level3" data-number="1.4.2">
@@ -453,7 +453,7 @@ Tip
 </section>
 <section id="installing-and-loading-r-packages" class="level3" data-number="1.4.3">
 <h3 data-number="1.4.3" class="anchored" data-anchor-id="installing-and-loading-r-packages"><span class="header-section-number">1.4.3</span> Installing and loading R packages</h3>
-<p>As we discussed, most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not. We will be using many different packages in this course. Of course, you are free to install and use any package you come across for any of the assignments.</p>
+<p>As we discussed, most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not.</p>
 <p>The “official” place for packages is the <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html">CRAN website</a>. If you are interested in packages on a specific topic, the <a href="http://cran.r-project.org/web/views/">CRAN task views</a> provide curated descriptions of packages sorted by topic.</p>
 <p>To install an R package from CRAN, one can simply call the <code>install.packages()</code> function and pass the name of the package as an argument. For example, to install the <code>ggplot2</code> package from CRAN: open RStudio,go to the R prompt (the <code>&gt;</code> symbol) in the lower-left corner and type</p>
 <div class="cell">
@@ -486,7 +486,6 @@ Questions
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We will not do that now, but it is quite likely that at one point later in this course we will.</p>
 <p>You only need to install a package once, unless you upgrade/re-install R. Once installed, you still need to load the package before you can use it. That has to happen every time you start a new R session. You do that using the <code>library()</code> command. For instance to load the <code>ggplot2</code> package, type</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggplot2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -589,7 +588,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -625,24 +641,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
@@ -653,8 +687,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./reproducible-res.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducible Research</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./exercises-01.html" class="pagination-link">
+        <span class="nav-page-text">Group work</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
