@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Stephanie Hicks">
-<meta name="dcterms.date" content="2022-12-02">
 <meta name="description" content="Course material (lectures and workshops) from Stephanie Hicks">
 
-<title>CSHL Computational Genomics 2022</title>
+<title>CSHL Computational Genomics 2022 - 7&nbsp; Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -96,7 +94,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro-to-r.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./intro-to-single-cell.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -135,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">CSHL Computational Genomics 2022</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Workshop</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -160,7 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -205,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Workshop</span></a>
+  <a href="./exercises-04.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Workshop</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -222,11 +221,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="toc-section-number">7.1</span>  Overview</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="toc-section-number">7.2</span>  Data</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="toc-section-number">7.3</span>  Tasks</a>
   <ul class="collapse">
-  <li><a href="#key-resources" id="toc-key-resources" class="nav-link" data-scroll-target="#key-resources">Key resources</a></li>
-  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#useful-tips" id="toc-useful-tips" class="nav-link" data-scroll-target="#useful-tips"><span class="toc-section-number">7.3.1</span>  Useful tips</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -236,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">CSHL Computational Genomics 2022</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Workshop</span></h1>
 </div>
 
 <div>
@@ -248,52 +247,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Stephanie Hicks </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 2, 2022</p>
-    </div>
-  </div>
     
   </div>
   
 
 </header>
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Welcome to the course material from Stephanie Hicks at the CSHL Computational Genomics 2022 course!</p>
-<section id="key-resources" class="level2">
-<h2 class="anchored" data-anchor-id="key-resources">Key resources</h2>
-<ul>
-<li>Workshop material: <a href="https://stephaniehicks.com/cshlcg2022" class="uri">https://stephaniehicks.com/cshlcg2022</a></li>
-<li>Code on GitHub: <a href="https://github.com/stephaniehicks/cshlcg2022" class="uri">https://github.com/stephaniehicks/cshlcg2022</a></li>
-</ul>
+<section id="overview" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">7.1</span> Overview</h2>
+<p>The goal of this workshop is to build a workflow with some example single-cell RNA-seq data.</p>
 </section>
-<section id="instructor" class="level2">
-<h2 class="anchored" data-anchor-id="instructor">Instructor</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Stephanie C. Hicks, PhD</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Associate Professor, Biostatistics, Johns Hopkins Bloomberg School of Public Health</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Faculty member, Johns Hopkins Data Science Lab</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Pronouns: she/her </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>web: https://www.stephaniehicks.com</li>
-<li>email: shicks19@jhu.edu</li>
-<li>twitter: <a href="http://twitter.com/stephaniehicks">stephaniehicks</a></li>
-</ul>
+<section id="data" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="data"><span class="header-section-number">7.2</span> Data</h2>
+<p>The <em><a href="https://bioconductor.org/packages/3.15/scRNAseq">scRNAseq</a></em> package provides convenient access to several publicly available data sets in the form of <code>SingleCellExperiment</code> objects. The focus of this package is to capture datasets that are not easily read into R with a one-liner from, e.g., <code>read_csv()</code>. Instead, the necessary data munging is already done so that users only need to call a single function to obtain a well-formed <code>SingleCellExperiment</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scRNAseq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To see the list of available datasets, use the <code>listDatasets()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">listDatasets</span>() </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DataFrame with 61 rows and 5 columns
+                 Reference  Taxonomy               Part    Number
+               &lt;character&gt; &lt;integer&gt;        &lt;character&gt; &lt;integer&gt;
+1   @aztekin2019identifi..      8355               tail     13199
+2   @bach2017differentia..     10090      mammary gland     25806
+3           @bacher2020low      9606            T cells    104417
+4     @baron2016singlecell      9606           pancreas      8569
+5     @baron2016singlecell     10090           pancreas      1886
+...                    ...       ...                ...       ...
+57    @zeisel2018molecular     10090     nervous system    160796
+58     @zhao2020singlecell      9606 liver immune cells     68100
+59    @zhong2018singlecell      9606  prefrontal cortex      2394
+60  @zilionis2019singlec..      9606               lung    173954
+61  @zilionis2019singlec..     10090               lung     17549
+                      Call
+               &lt;character&gt;
+1        AztekinTailData()
+2        BachMammaryData()
+3        BacherTCellData()
+4   BaronPancreasData('h..
+5   BaronPancreasData('m..
+...                    ...
+57     ZeiselNervousData()
+58   ZhaoImmuneLiverData()
+59   ZhongPrefrontalData()
+60      ZilionisLungData()
+61  ZilionisLungData('mo..</code></pre>
+</div>
+</div>
+<p>You can load a dataset the following way:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sce <span class="ot">&lt;-</span> <span class="fu">ZeiselBrainData</span>()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sce</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class: SingleCellExperiment 
+dim: 20006 3005 
+metadata(0):
+assays(1): counts
+rownames(20006): Tspan12 Tshz1 ... mt-Rnr1 mt-Nd4l
+rowData names(1): featureType
+colnames(3005): 1772071015_C02 1772071017_G12 ... 1772066098_A12
+  1772058148_F03
+colData names(10): tissue group # ... level1class level2class
+reducedDimNames(0):
+mainExpName: endogenous
+altExpNames(2): ERCC repeat</code></pre>
+</div>
+</div>
 </section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>This course website was developed and is maintained by Stephanie C. Hicks.</p>
-<p>The following individuals have contributed to improving the course or materials have been adapted from their courses:</p>
-<p>The course materials are licensed under the GPL-3 License. Linked and embedded materials are governed by their own licenses. I assume that all external materials used or embedded here are covered under the educational fair use policy. If this is not the case and any material displayed here violates copyright, please let me know and I will remove it.</p>
+<section id="tasks" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="tasks"><span class="header-section-number">7.3</span> Tasks</h2>
+<ol type="1">
+<li><p>Pick a scRNA-seq dataset that has more than 5,000 cells and load the <code>SingleCellExperiment</code> (or <code>sce</code>) object.</p></li>
+<li><p>Show the number of number of genes and number of observations in the <code>sce</code> object.</p></li>
+<li><p>Using the material we learned in the lecture, analyze the scRNA-seq data using the Biocondutor packages we learned about. This should include (but not be limited to)</p>
+<ul>
+<li>Quality control (you must use at least two different QC metrics)</li>
+<li>Normalization</li>
+<li>Feature selection using highly variable genes</li>
+<li>Dimensionality reduction using PCA</li>
+<li>Data visualization using tSNE or UMAP</li>
+<li>Unsupervised clustering (your choice of method!)</li>
+</ul></li>
+<li><p>At the end of your analysis, show a plot of both (i) the PCA plot and (ii) either the tSNE or UMAP plot with the colors represented by the predicted labels from the clustering algorithm.</p></li>
+<li><p>For each component described in Task #3, write 3-4 sentences naming and describing the idea behind the methodology you used, along with interpreting the output.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your solution here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="useful-tips" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="useful-tips"><span class="header-section-number">7.3.1</span> Useful tips</h3>
+<ul>
+<li>If the original dataset was not provided with Ensembl annotation, we can map the identifiers with <code>ensembl=TRUE</code>. Any genes without a corresponding <code>Ensembl</code> identifier is discarded from the dataset.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sce <span class="ot">&lt;-</span> <span class="fu">ZeiselBrainData</span>(<span class="at">ensembl=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unable to map 1565 of 20006 requested IDs.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">rownames</span>(sce))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ENSMUSG00000029669" "ENSMUSG00000046982" "ENSMUSG00000039735"
+[4] "ENSMUSG00000033453" "ENSMUSG00000046798" "ENSMUSG00000034009"</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -400,10 +460,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./intro-to-single-cell.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Overview of single-cell analysis in R/Bioconductor</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro-to-r.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
