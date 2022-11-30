@@ -8,8 +8,11 @@ book:
   date: "2022-11-29"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+    - intro-to-r.qmd
+    - reproducible-res.qmd
+    - exercises-01.qmd
+    - tidyverse.qmd
+    - exercises-02.qmd
     - references.qmd
 
 bibliography: references.bib
