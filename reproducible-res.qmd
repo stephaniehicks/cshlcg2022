@@ -4,6 +4,10 @@
 
 \[[Link to Claerbout and Karrenbach (1992) article](http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92)\]
 
+> "When writing code, you're always collaborating with future-you; and past-you doesn't respond to emails". ---*Hadley Wickham*
+
+\[[Source](https://fivebooks.com/best-books/computer-science-data-science-hadley-wickham/)\]
+
 
 ## Acknowledgements
 
@@ -37,7 +41,6 @@ Material for this chapter was borrowed and adopted from
 -   Recognize differences between available tools to for literate programming
 -   Know how to efficiently work within RStudio for efficient literate programming
 -   Create a R Markdown document
-
 :::
 
 ## Introduction
@@ -91,7 +94,6 @@ In this way, you can at least have **confidence that you can reproduce the analy
 Recently, there has been a lot of discussion of reproducibility in the media and in the scientific literature. For example, he journal *Science* had a special issue on reproducibility and data replication.
 
 -   <https://www.science.org/toc/science/334/6060>
-
 
 ### Why does this matter?
 
@@ -148,7 +150,7 @@ Understanding what someone did in a data analysis now **requires looking at code
 
 The bottom line with all these different trends is that for every field "X", there is now "Computational X". There's computational biology, computational astronomy---whatever it is you want, there is a computational version of it.
 
-## Literate programming 
+## Literate programming
 
 One basic idea to make writing reproducible reports easier is what's known as *literate statistical programming* (or sometimes called [literate statistical practice](http://www.r-project.org/conferences/DSC-2001/Proceedings/Rossini.pdf)). This comes from the idea of [literate programming](https://en.wikipedia.org/wiki/Literate_programming) in the area of writing computer programs.
 

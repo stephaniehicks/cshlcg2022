@@ -6,6 +6,12 @@
 library(tidyverse)
 ```
 
+> "Happy families are all alike; every unhappy family is unhappy in its own way." ---- Leo Tolstoy
+
+> "Tidy datasets are all alike, but every messy dataset is messy in its own way." ---- Hadley Wickham
+
+
+
 ## Learning objectives
 
 -   Know difference between relative vs absolute paths
@@ -228,7 +234,6 @@ library(tidyverse)
 ```
 
 You may get some warnings when the package is loaded because there are functions in the `dplyr` package that have the same name as functions in other packages. For now you can ignore the warnings.
-
 
 ## `dplyr` functions
 
@@ -581,8 +586,7 @@ When **building plots in `ggplot2`** (rather than using `qplot()`), the **"artis
 
 Essentially, you start with some raw data, and then you **gradually add bits and pieces to it to create a plot**.
 
-:::{.callout-note}
-
+::: callout-note
 Plots are built up in layers, with the typically ordering being
 
 1.  Plot the data
@@ -590,7 +594,6 @@ Plots are built up in layers, with the typically ordering being
 3.  Add metadata and annotation
 
 For quick exploratory plots you may not get past step 1.
-
 :::
 
 ## Building up in layers
