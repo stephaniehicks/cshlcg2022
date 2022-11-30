@@ -287,6 +287,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<blockquote class="blockquote">
+<p>“Happy families are all alike; every unhappy family is unhappy in its own way.” —- Leo Tolstoy</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Tidy datasets are all alike, but every messy dataset is messy in its own way.” —- Hadley Wickham</p>
+</blockquote>
 <section id="learning-objectives" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">3.1</span> Learning objectives</h2>
 <ul>
@@ -352,18 +358,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(here<span class="sc">::</span><span class="fu">here</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "_book"                  "_freeze"                "_quarto.yml"           
- [4] "cover.png"              "cshlcg2022.Rproj"       "data"                  
- [7] "exercises-01.html"      "exercises-01.qmd"       "exercises-02.html"     
-[10] "exercises-02.qmd"       "exercises-03.qmd"       "index.html"            
-[13] "index.qmd"              "intro-to-r.html"        "intro-to-r.qmd"        
-[16] "references.bib"         "references.qmd"         "reproducible-res_files"
-[19] "reproducible-res.html"  "reproducible-res.qmd"   "site_libs"             
-[22] "tidyverse.qmd"          "tidyverse.rmarkdown"   </code></pre>
+<pre><code> [1] "_book"                    "_freeze"                 
+ [3] "_quarto.yml"              "cover.png"               
+ [5] "cshlcg2022.Rproj"         "data"                    
+ [7] "exercises-01.html"        "exercises-01.qmd"        
+ [9] "exercises-02.html"        "exercises-02.qmd"        
+[11] "exercises-03.qmd"         "exercises-04.qmd"        
+[13] "figures"                  "index.html"              
+[15] "index.qmd"                "intro-to-bioc.qmd"       
+[17] "intro-to-r.html"          "intro-to-r.qmd"          
+[19] "intro-to-single-cell.qmd" "references.bib"          
+[21] "references.qmd"           "reproducible-res_files"  
+[23] "reproducible-res.html"    "reproducible-res.qmd"    
+[25] "site_libs"                "tidyverse_files"         
+[27] "tidyverse.qmd"            "tidyverse.rmarkdown"     </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">here</span>(<span class="st">"data"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "chicago.rds"        "spotify_songs.RDS"  "team_standings.csv"</code></pre>
+<pre><code>[1] "asthma.rda"         "chicago.rds"        "spotify_songs.RDS" 
+[4] "team_standings.csv"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"team_standings.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1095,16 +1108,16 @@ Example
 <pre><code># A tibble: 10 × 10
    city   tmpd dewpoint date        pm25 pm10tme…¹ o3tme…² no2tm…³ pm25d…⁴  year
    &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;date&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
- 1 chic   68       57.9 1998-09-03  19.3      42     25.6     31.7    3.07  1998
- 2 chic   24       20.6 1996-02-15  NA        22.2    9.96    30.7   NA     1996
- 3 chic   39       36.1 1997-10-28  NA        30.5    6.02    27.8   NA     1997
- 4 chic   38       29.3 1999-11-16  NA        16.5   12.0     23.3   NA     1999
- 5 chic   39       34.2 2004-12-08  13.9      27      7.51    22.0   -2.29  2004
- 6 chic   66       46.3 1999-09-23  NA        44.5   24.9     26.6   NA     1999
- 7 chic   33.5     26.6 1995-02-02  NA        16.4   17.4     23.7   NA     1995
- 8 chic   74       60.6 2003-09-11  37.8      58.5   39.2     26.9   21.6   2003
- 9 chic   54       44.4 2005-05-11  NA        17     26.6     12.0   NA     2005
-10 chic   82       67.4 2002-06-20  33        80.5   47.4     30.8   16.8   2002
+ 1 chic   22       12.7 2000-01-17  11.7      23.5   17.9     20.1   -4.53  2000
+ 2 chic   86.5     74.8 1995-08-12  NA        58.5   43.4     24.6   NA     1995
+ 3 chic   33       23.8 2000-03-02   7        11.5   25.8     19.2   -9.23  2000
+ 4 chic   81.5     68.8 1991-09-15  NA        34.3   22.2     16.9   NA     1991
+ 5 chic   46       30.4 1990-04-08  NA        28     21.4     31.9   NA     1990
+ 6 chic   36       30.4 2004-12-04  14.4      28      7.57    22.8   -1.83  2004
+ 7 chic   48.5     34.9 1992-05-03  NA        34.5   18.1     15.5   NA     1992
+ 8 chic   53       38.4 1991-05-07  NA        27     26.0     17.3   NA     1991
+ 9 chic   45.5     33.9 1991-10-16  NA        37      9.79    24.5   NA     1991
+10 chic   33.5     26.5 1988-12-24  NA        NA      4.54    24.8   NA     1988
 # … with abbreviated variable names ¹​pm10tmean2, ²​o3tmean2, ³​no2tmean2,
 #   ⁴​pm25detrend</code></pre>
 </div>
