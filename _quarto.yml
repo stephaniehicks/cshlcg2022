@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "CSHL Computational Genomics 2022"
+  description: Course material (lectures and workshops) from Stephanie Hicks
+  author: "Stephanie Hicks"
+  date: "2022-11-29"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
+execute:
+  freeze: auto
+
