@@ -1,11 +1,19 @@
 # Reproducible Research
 
+> An article about computational results is advertising, not scholarship. The actual scholarship is the full software environment, code and data, that produced the result. ---*Claerbout and Karrenbach (1992)*
+
+\[[Link to Claerbout and Karrenbach (1992) article](http://sepwww.stanford.edu/doku.php?id=sep:research:reproducible:seg92)\]
+
+
 ## Acknowledgements
 
-Material for this lecture was borrowed and adopted from
+Material for this chapter was borrowed and adopted from
 
 -   <https://rdpeng.github.io/Biostat776/lecture-literate-statistical-programming.html>
 -   <https://statsandr.com/blog/tips-and-tricks-in-rstudio-and-r-markdown>
+-   <https://ropensci.github.io/reproducibility-guide/sections/introduction>
+-   <https://rdpeng.github.io/Biostat776>
+-   [Reproducible Research: A Retrospective](https://www.annualreviews.org/doi/abs/10.1146/annurev-publhealth-012420-105110) by Roger Peng and Stephanie Hicks
 
 ::: callout-tip
 ### Additional Resources
@@ -22,13 +30,125 @@ Material for this lecture was borrowed and adopted from
 
 **At the end of this lesson you will:**
 
+-   Know the difference between replication and reproducibility
+-   Identify valid reasons why replication and/or reproducibility is not always possible
+-   Identify key components to enable reproducible data analyses
 -   Be able to define literate programming
 -   Recognize differences between available tools to for literate programming
 -   Know how to efficiently work within RStudio for efficient literate programming
 -   Create a R Markdown document
+
 :::
 
 ## Introduction
+
+This chapter will be about **reproducible reporting**, and I want to take the opportunity to cover some basic concepts and ideas that are related to reproducible reporting, just in case you have not heard about it or do not know what it is.
+
+Before we get to **reproducibility**, we need to cover a little background with respect to how science works (even if you are not a scientist, this is important).
+
+The ultimate standard in strengthening scientific evidence is **replication**. Assume you claim that X causes Y, or that Vitamin C improves disease. The goal of replication is to **have independent people to do independent things with different data, different methods, and different laboratories and see if they get the same result**.
+
+There is a sense that if a relationship in nature is truly there, then it should be robust to having different people discover it in different ways. Replication is particularly important in areas where findings can have big policy impacts or can influence regulatory types of decisions.
+
+### What is wrong with replication?
+
+There is really nothing wrong with it. This is what science has been doing for a long time, through hundreds of years. And there is nothing wrong with it today.
+
+But the problem is that it is **becoming more and more challenging to do replication** or to replicate other studies.
+
+Here are some reasons:
+
+1.  Often times studies are **much larger and more costly** than previously. If you want to do ten versions of the same study, you need ten times as much money and there is not as much money around as there used to be.
+2.  Sometimes it is difficult to replicate a study because **if the original study took 20 years to complete**, it is difficult to wait around another 20 years for replication.
+3.  Some studies are just plain **unique**, such as studying the impact of a massive earthquake in a very specific location and time. If you are looking at a unique situation in time or a unique population, you cannot readily replicate that situation.
+
+There are a lot of good reasons why you cannot replicate a study. If you cannot replicate a study, **is the alternative just to do nothing** (?? `r emojifont::emoji('scream')`), just let that study stand by itself?
+
+The idea behind a reproducible reporting is to create a kind of **minimum standard** (or a middle ground) where we will not be replicating a study, but maybe we can **do something in between**. What can we do that's in between the gold standard and doing nothing?
+
+That is where reproducibility comes in. That's how we can kind of **bridge the gap between replication and nothing**.
+
+In non-research settings, often full replication is not even the point. Often the goal is to preserve something to the point where anybody in an organization can repeat what you did (for example, after you leave the organization).
+
+-   In this case, reproducibility is key to maintaining the history of a project and making sure that every step along the way is clear.
+
+::: callout-note
+#### Summary
+
+-   Replication, whereby scientific questions are examined and verified independently by different scientists, is the gold standard for scientific validity.
+-   Replication can be difficult and often there are no resources to independently replicate a study.
+-   Reproducibility, whereby data and code are re-analyzed by independent scientists to obtain the same results of the original investigator, is a reasonable minimum standard when replication is not possible.
+:::
+
+## Reproducibility to the Rescue
+
+Let's first define reproducibility. The basic idea is that you need to make the **data** available for the original study and the **computational methods** available so that other people can look at your data and run the kind of analysis that you have run, and come to the same findings that you found.
+
+What reproducible reporting is about is a **validation of the data analysis (not the original question itself)**. Because you are not collecting independent data using independent methods, it is a little bit more difficult to validate the scientific question itself. But if you can take someone's data and reproduce their findings, then you can, in some sense, validate the data analysis.
+
+In this way, you can at least have **confidence that you can reproduce the analysis**.
+
+Recently, there has been a lot of discussion of reproducibility in the media and in the scientific literature. For example, he journal *Science* had a special issue on reproducibility and data replication.
+
+-   <https://www.science.org/toc/science/334/6060>
+
+
+### Why does this matter?
+
+Here is an example. In 2012, a feature on the TV show 60 minutes looked at a major incident at Duke University where many results involving a promising cancer test were found to be not reproducible. This led to a number of studies and clinical trials having to be stopped, followed by an investigation which is still ongoing.
+
+<p align="center">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W5sZTNPMQRM" frameborder="0" allowfullscreen>
+
+</iframe>
+
+</p>
+
+\[[Source](https://www.youtube.com/watch?v=W5sZTNPMQRM) on YouTube\]
+
+### Types of reproducibility
+
+**What are the different kinds of reproducible research?** Enabling reproducibility can be complicated, but by separating out some of the levels and degrees of reproducibility the problem can become more manageable because we can focus our efforts on what best suits our specific scientific domain. [Victoria Stodden (2014)](https://www.edge.org/response-detail/25340), a prominent scholar on this topic, has identified some useful distinctions in reproducible research:
+
+-   **Computational reproducibility**: when detailed information is provided about code, software, hardware and implementation details.
+-   **Empirical reproducibility**: when detailed information is provided about non-computational empirical scientific experiments and observations. In practice this is enabled by making data freely available, as well as details of how the data was collected.
+-   **Statistical reproducibility**: when detailed information is provided about the choice of statistical tests, model parameters, threshold values, etc. This mostly relates to pre-registration of study design to prevent *p*-value hacking and other manipulations.
+
+\[[Source](https://ropensci.github.io/reproducibility-guide/sections/introduction/)\]
+
+### Elements of computational reproducibility
+
+What do we need for computational reproducibility? There are a variety of ways to talk about this, but one basic definition that we hae come up with is that there are four things that are required to make results reproducible:
+
+1.  **Analytic data**. The data that were used for the analysis that was presented should be available for others to access. This is different from the *raw data* because very often in a data analysis the raw data are not all used for the analysis, but rather some subset is used. It may be interesting to see the raw data but impractical to actually have it. Analytic data is key to examining the data analysis.
+2.  **Analytic code**. The analytic code is the code that was applied to the analytic data to produce the key results. This may be preprocessing code, regression modeling code, or really any other code used to produce the results from the analytic data.
+3.  **Documentation**. Documentation of that code and the data is very important.
+4.  **Distribution**. Finally, there needs to be some standard means of distribution, so all this data in the code is easily accessible.
+
+::: callout-note
+#### Summary
+
+-   Reproducible reporting is about is a validation of the data analysis
+-   There are multiple types of reproducibility
+-   There are four elements to computational reproducibility
+:::
+
+## "X" to "Computational X"
+
+What is driving this need for a "reproducibility middle ground" between replication and doing nothing?
+
+For starters, there are **a lot of new technologies on the scene** and in many different fields of study including, biology, chemistry and environmental science. These **technologies allow us to collect data at a much higher throughput** so we end up with these very complex and very high dimensional data sets.
+
+These **datasets can be collected almost instantaneously** compared to even just ten years ago---the technology has allowed us to create huge data sets at essentially the touch of a button. Furthermore, we the computing power to take existing (already huge) databases and merge them into even bigger and bigger databases. Finally, the **massive increase in computing power** has allowed us to implement more sophisticated and complex analysis routines.
+
+The analyses themselves, the models that we fit and **the algorithms that we run, are much much more complicated** than they used to be. Having a basic understanding of these algorithms is difficult, even for a sophisticated person, and it is almost impossible to describe these algorithms with words alone.
+
+Understanding what someone did in a data analysis now **requires looking at code and scrutinizing the computer programs** that people used.
+
+The bottom line with all these different trends is that for every field "X", there is now "Computational X". There's computational biology, computational astronomy---whatever it is you want, there is a computational version of it.
+
+## Literate programming 
 
 One basic idea to make writing reproducible reports easier is what's known as *literate statistical programming* (or sometimes called [literate statistical practice](http://www.r-project.org/conferences/DSC-2001/Proceedings/Rossini.pdf)). This comes from the idea of [literate programming](https://en.wikipedia.org/wiki/Literate_programming) in the area of writing computer programs.
 
@@ -74,7 +194,7 @@ The authors of the 2nd book describe the motivation for the 2nd book as:
 > "However, we have received comments from our readers and publisher that it would be beneficial to provide more practical and relatively short examples to show the interesting and useful usage of R Markdown, because it can be daunting to find out how to achieve a certain task from the aforementioned reference book (put another way, that book is too dry to read). As a result, this cookbook was born."
 :::
 
-Because this is lecture is built in a `.qmd` file (which is very similar to a `.Rmd` file), let's demonstrate how this work. I am going to change `eval=FALSE` to `eval=TRUE`.
+Because this is chapter is built in a `.qmd` file (which is very similar to a `.Rmd` file), let's demonstrate how this work. I am going to change `eval=FALSE` to `eval=TRUE`.
 
 ```{r plot2, height=4, width=5, eval=TRUE, echo=TRUE}
 data(airquality)

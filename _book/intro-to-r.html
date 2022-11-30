@@ -94,7 +94,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./reproducible-res.html" rel="next">
+<link href="./exercises-01.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -125,7 +125,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -170,12 +169,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./exercises-01.html" class="sidebar-item-text sidebar-link">Group work</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./reproducible-res.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducible Research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises-01.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  <a href="./exercises-02.html" class="sidebar-item-text sidebar-link">Group work</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -185,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises-02.html" class="sidebar-item-text sidebar-link">Exercises</a>
+  <a href="./exercises-03.html" class="sidebar-item-text sidebar-link">Workshop</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -250,7 +254,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <section id="acknowledgements" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">1.1</span> Acknowledgements</h2>
-<p>Material for this lecture was borrowed and adopted from</p>
+<p>Material for this chapter was borrowed and adopted from</p>
 <ul>
 <li><a href="https://rdpeng.github.io/Biostat776/lecture-introduction-and-overview.html" class="uri">https://rdpeng.github.io/Biostat776/lecture-introduction-and-overview.html</a></li>
 <li><a href="https://rafalab.github.io/dsbook" class="uri">https://rafalab.github.io/dsbook</a></li>
@@ -311,7 +315,7 @@ Learning objectives
 <li>While “Low-level” programming languages (e.g.&nbsp;Fortran, C, etc) often have more efficient code, they can also be harder to learn because it is designed to be close to a machine language.</li>
 <li>In contrast, high-level languages deal more with variables, objects, functions, loops, and other abstract CS concepts with a focus on usability over optimal program efficiency.</li>
 </ul></li>
-<li>R integrates easily with document preparation systems like <span class="math inline">\(\LaTeX\)</span>, but R files can also be used to create <code>.docx</code>, <code>.pdf</code>, <code>.html</code>, <code>.ppt</code> files with integrated R code output and graphics.</li>
+<li>R integrates easily with document preparation systems like LaTeX, but R files can also be used to create <code>.docx</code>, <code>.pdf</code>, <code>.html</code>, <code>.ppt</code> files with integrated R code output and graphics.</li>
 <li>The R Community is very dynamic, helpful and welcoming.
 <ul>
 <li>Check out the <a href="https://twitter.com/search?q=%23rstats">#rstats</a> or <a href="https://twitter.com/search?q=%23rtistry">#rtistry</a> on Twitter, <a href="https://www.tidytuesday.com">TidyTuesday</a> podcast and community activity in the <a href="https://www.rfordatasci.com">R4DS Online Learning Community</a>, and <a href="https://www.reddit.com/r/rstats/">r/rstats</a> subreddit.</li>
@@ -320,13 +324,6 @@ Learning objectives
 <li>Through R packages, it is easy to get lots of state-of-the-art algorithms.</li>
 <li>Documentation and help files for R are generally good.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://github.com/allisonhorst/stats-illustrations/raw/main/rstats-artwork/r_first_then.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Artwork by Allison Horst on learning R</figcaption><p></p>
-</figure>
-</div>
-<p>[<strong>Source</strong>: <a href="https://github.com/allisonhorst/stats-illustrations">Artwork by Allison Horst</a>]</p>
 <section id="basic-features-of-r" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="basic-features-of-r"><span class="header-section-number">1.3.1</span> Basic Features of R</h3>
 <p>Today R runs on almost any standard computing platform and operating system.</p>
@@ -431,7 +428,6 @@ Tip
 </ul>
 </div>
 </div>
-<p>If things don’t work, ask for help in the Courseplus discussion board.</p>
 <p>I personally only have experience with Mac, but everything should work on all the standard operating systems (Windows, Mac, and even Linux).</p>
 </section>
 <section id="rstudio-default-options" class="level3" data-number="1.4.2">
@@ -461,7 +457,7 @@ Tip
 </section>
 <section id="installing-and-loading-r-packages" class="level3" data-number="1.4.3">
 <h3 data-number="1.4.3" class="anchored" data-anchor-id="installing-and-loading-r-packages"><span class="header-section-number">1.4.3</span> Installing and loading R packages</h3>
-<p>As we discussed, most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not. We will be using many different packages in this course. Of course, you are free to install and use any package you come across for any of the assignments.</p>
+<p>As we discussed, most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not.</p>
 <p>The “official” place for packages is the <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html">CRAN website</a>. If you are interested in packages on a specific topic, the <a href="http://cran.r-project.org/web/views/">CRAN task views</a> provide curated descriptions of packages sorted by topic.</p>
 <p>To install an R package from CRAN, one can simply call the <code>install.packages()</code> function and pass the name of the package as an argument. For example, to install the <code>ggplot2</code> package from CRAN: open RStudio,go to the R prompt (the <code>&gt;</code> symbol) in the lower-left corner and type</p>
 <div class="cell">
@@ -494,7 +490,6 @@ Questions
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We will not do that now, but it is quite likely that at one point later in this course we will.</p>
 <p>You only need to install a package once, unless you upgrade/re-install R. Once installed, you still need to load the package before you can use it. That has to happen every time you start a new R session. You do that using the <code>library()</code> command. For instance to load the <code>ggplot2</code> package, type</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggplot2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -661,8 +656,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./reproducible-res.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducible Research</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./exercises-01.html" class="pagination-link">
+        <span class="nav-page-text">Group work</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

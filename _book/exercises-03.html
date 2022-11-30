@@ -8,7 +8,7 @@
 
 <meta name="description" content="Course material (lectures and workshops) from Stephanie Hicks">
 
-<title>CSHL Computational Genomics 2022 - Exercises</title>
+<title>CSHL Computational Genomics 2022 - Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Exercises</h1>
+      <h1 class="quarto-secondary-nav-title">Workshop</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -164,17 +164,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./intro-to-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tidyverse.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></a>
+  <a href="./exercises-01.html" class="sidebar-item-text sidebar-link">Group work</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises.html" class="sidebar-item-text sidebar-link active">Exercises</a>
+  <a href="./reproducible-res.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducible Research</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercises-02.html" class="sidebar-item-text sidebar-link">Group work</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tidyverse.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercises-03.html" class="sidebar-item-text sidebar-link active">Workshop</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -202,7 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Exercises</h1>
+<h1 class="title d-none d-lg-block">Workshop</h1>
 </div>
 
 <div>
@@ -223,8 +238,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In these exercises, you will explore spotify songs!</p>
-<p>Please write up your project using R Markdown and <code>knitr</code>. Please <strong>show all your code</strong> for each of the answers to each part.</p>
+<p>In this workshop, you will explore spotify songs!</p>
+<p>Please write up your solution using R Markdown and <code>knitr</code>. Please <strong>show all your code</strong> for each of the answers to each part.</p>
+<p>At the end of the workshop, we will go over the answers.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
@@ -357,11 +373,11 @@ $ duration_ms              &lt;dbl&gt; 194754, 162600, 176616, 169093, 189052, 1
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">slice</span>(dat, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 1
-      x
-  &lt;dbl&gt;
-1 0.336
-2 1.07 
-3 1.20 </code></pre>
+       x
+   &lt;dbl&gt;
+1 -2.09 
+2  3.24 
+3 -0.910</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Create a new column that indicates whether the value of 'x' is positive or negative</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span></span>
@@ -373,16 +389,16 @@ $ duration_ms              &lt;dbl&gt; 194754, 162600, 176616, 169093, 189052, 1
 <pre><code># A tibble: 100 × 2
         x is_positive
     &lt;dbl&gt; &lt;chr&gt;      
- 1  0.336 Yes        
- 2  1.07  Yes        
- 3  1.20  Yes        
- 4 -0.649 No         
- 5 -0.987 No         
- 6 -0.175 No         
- 7  0.373 Yes        
- 8 -0.757 No         
- 9  2.10  Yes        
-10  0.717 Yes        
+ 1 -2.09  No         
+ 2  3.24  Yes        
+ 3 -0.910 No         
+ 4 -0.335 No         
+ 5  0.933 Yes        
+ 6  0.935 Yes        
+ 7  0.161 Yes        
+ 8 -0.875 No         
+ 9  0.498 Yes        
+10  1.86  Yes        
 # … with 90 more rows</code></pre>
 </div>
 </div>
@@ -495,7 +511,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./tidyverse.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Course material (lectures and workshops) from Stephanie Hicks">
 
-<title>CSHL Computational Genomics 2022 - 2&nbsp; Tidyverse and data viz</title>
+<title>CSHL Computational Genomics 2022 - 3&nbsp; Tidyverse and data viz</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,8 +94,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./exercises.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./exercises-03.html" rel="next">
+<link href="./exercises-02.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -164,17 +164,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./intro-to-r.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tidyverse.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></a>
+  <a href="./exercises-01.html" class="sidebar-item-text sidebar-link">Group work</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exercises</span></a>
+  <a href="./reproducible-res.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducible Research</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercises-02.html" class="sidebar-item-text sidebar-link">Group work</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tidyverse.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercises-03.html" class="sidebar-item-text sidebar-link">Workshop</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,46 +206,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="toc-section-number">2.1</span>  Learning objectives</a></li>
-  <li><a href="#reading-and-writing-data" id="toc-reading-and-writing-data" class="nav-link" data-scroll-target="#reading-and-writing-data"><span class="toc-section-number">2.2</span>  Reading and writing data</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="toc-section-number">3.1</span>  Learning objectives</a></li>
+  <li><a href="#reading-and-writing-data" id="toc-reading-and-writing-data" class="nav-link" data-scroll-target="#reading-and-writing-data"><span class="toc-section-number">3.2</span>  Reading and writing data</a>
   <ul class="collapse">
-  <li><a href="#relative-paths" id="toc-relative-paths" class="nav-link" data-scroll-target="#relative-paths"><span class="toc-section-number">2.2.1</span>  Relative paths</a></li>
-  <li><a href="#the-here-package" id="toc-the-here-package" class="nav-link" data-scroll-target="#the-here-package"><span class="toc-section-number">2.2.2</span>  The <code>here</code> package</a></li>
-  <li><a href="#the-readr-package" id="toc-the-readr-package" class="nav-link" data-scroll-target="#the-readr-package"><span class="toc-section-number">2.2.3</span>  The <code>readr</code> package</a></li>
+  <li><a href="#relative-paths" id="toc-relative-paths" class="nav-link" data-scroll-target="#relative-paths"><span class="toc-section-number">3.2.1</span>  Relative paths</a></li>
+  <li><a href="#the-here-package" id="toc-the-here-package" class="nav-link" data-scroll-target="#the-here-package"><span class="toc-section-number">3.2.2</span>  The <code>here</code> package</a></li>
+  <li><a href="#the-readr-package" id="toc-the-readr-package" class="nav-link" data-scroll-target="#the-readr-package"><span class="toc-section-number">3.2.3</span>  The <code>readr</code> package</a></li>
   </ul></li>
-  <li><a href="#data-frames-and-tibbles" id="toc-data-frames-and-tibbles" class="nav-link" data-scroll-target="#data-frames-and-tibbles"><span class="toc-section-number">2.3</span>  Data frames and tibbles</a>
+  <li><a href="#data-frames-and-tibbles" id="toc-data-frames-and-tibbles" class="nav-link" data-scroll-target="#data-frames-and-tibbles"><span class="toc-section-number">3.3</span>  Data frames and tibbles</a>
   <ul class="collapse">
-  <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles"><span class="toc-section-number">2.3.1</span>  Tibbles</a></li>
-  <li><a href="#how-tibbles-differ-from-data.frame" id="toc-how-tibbles-differ-from-data.frame" class="nav-link" data-scroll-target="#how-tibbles-differ-from-data.frame"><span class="toc-section-number">2.3.2</span>  How tibbles differ from <code>data.frame</code></a></li>
-  <li><a href="#as_tibble" id="toc-as_tibble" class="nav-link" data-scroll-target="#as_tibble"><span class="toc-section-number">2.3.3</span>  <code>as_tibble()</code></a></li>
+  <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles"><span class="toc-section-number">3.3.1</span>  Tibbles</a></li>
+  <li><a href="#how-tibbles-differ-from-data.frame" id="toc-how-tibbles-differ-from-data.frame" class="nav-link" data-scroll-target="#how-tibbles-differ-from-data.frame"><span class="toc-section-number">3.3.2</span>  How tibbles differ from <code>data.frame</code></a></li>
+  <li><a href="#as_tibble" id="toc-as_tibble" class="nav-link" data-scroll-target="#as_tibble"><span class="toc-section-number">3.3.3</span>  <code>as_tibble()</code></a></li>
   </ul></li>
-  <li><a href="#the-dplyr-package" id="toc-the-dplyr-package" class="nav-link" data-scroll-target="#the-dplyr-package"><span class="toc-section-number">2.4</span>  The <code>dplyr</code> package</a>
+  <li><a href="#the-dplyr-package" id="toc-the-dplyr-package" class="nav-link" data-scroll-target="#the-dplyr-package"><span class="toc-section-number">3.4</span>  The <code>dplyr</code> package</a>
   <ul class="collapse">
-  <li><a href="#dplyr-grammar" id="toc-dplyr-grammar" class="nav-link" data-scroll-target="#dplyr-grammar"><span class="toc-section-number">2.4.1</span>  <code>dplyr</code> grammar</a></li>
-  <li><a href="#dplyr-installation" id="toc-dplyr-installation" class="nav-link" data-scroll-target="#dplyr-installation"><span class="toc-section-number">2.4.2</span>  <code>dplyr</code> installation</a></li>
+  <li><a href="#dplyr-grammar" id="toc-dplyr-grammar" class="nav-link" data-scroll-target="#dplyr-grammar"><span class="toc-section-number">3.4.1</span>  <code>dplyr</code> grammar</a></li>
+  <li><a href="#dplyr-installation" id="toc-dplyr-installation" class="nav-link" data-scroll-target="#dplyr-installation"><span class="toc-section-number">3.4.2</span>  <code>dplyr</code> installation</a></li>
   </ul></li>
-  <li><a href="#dplyr-functions" id="toc-dplyr-functions" class="nav-link" data-scroll-target="#dplyr-functions"><span class="toc-section-number">2.5</span>  <code>dplyr</code> functions</a>
+  <li><a href="#dplyr-functions" id="toc-dplyr-functions" class="nav-link" data-scroll-target="#dplyr-functions"><span class="toc-section-number">3.5</span>  <code>dplyr</code> functions</a>
   <ul class="collapse">
-  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="toc-section-number">2.5.1</span>  <code>select()</code></a></li>
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="toc-section-number">2.5.2</span>  <code>filter()</code></a></li>
-  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="toc-section-number">2.5.3</span>  <code>arrange()</code></a></li>
-  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="toc-section-number">2.5.4</span>  <code>rename()</code></a></li>
-  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="toc-section-number">2.5.5</span>  <code>mutate()</code></a></li>
-  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="toc-section-number">2.5.6</span>  <code>group_by()</code></a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="toc-section-number">2.5.7</span>  <code>%&gt;%</code></a></li>
-  <li><a href="#slice_" id="toc-slice_" class="nav-link" data-scroll-target="#slice_"><span class="toc-section-number">2.5.8</span>  <code>slice_*()</code></a></li>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="toc-section-number">3.5.1</span>  <code>select()</code></a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="toc-section-number">3.5.2</span>  <code>filter()</code></a></li>
+  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="toc-section-number">3.5.3</span>  <code>arrange()</code></a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="toc-section-number">3.5.4</span>  <code>rename()</code></a></li>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="toc-section-number">3.5.5</span>  <code>mutate()</code></a></li>
+  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="toc-section-number">3.5.6</span>  <code>group_by()</code></a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="toc-section-number">3.5.7</span>  <code>%&gt;%</code></a></li>
+  <li><a href="#slice_" id="toc-slice_" class="nav-link" data-scroll-target="#slice_"><span class="toc-section-number">3.5.8</span>  <code>slice_*()</code></a></li>
   </ul></li>
-  <li><a href="#the-ggplot2-plotting-system" id="toc-the-ggplot2-plotting-system" class="nav-link" data-scroll-target="#the-ggplot2-plotting-system"><span class="toc-section-number">2.6</span>  The ggplot2 Plotting System</a>
+  <li><a href="#the-ggplot2-plotting-system" id="toc-the-ggplot2-plotting-system" class="nav-link" data-scroll-target="#the-ggplot2-plotting-system"><span class="toc-section-number">3.6</span>  The ggplot2 Plotting System</a>
   <ul class="collapse">
-  <li><a href="#basic-components-of-a-ggplot2-plot" id="toc-basic-components-of-a-ggplot2-plot" class="nav-link" data-scroll-target="#basic-components-of-a-ggplot2-plot"><span class="toc-section-number">2.6.1</span>  Basic components of a ggplot2 plot</a></li>
+  <li><a href="#basic-components-of-a-ggplot2-plot" id="toc-basic-components-of-a-ggplot2-plot" class="nav-link" data-scroll-target="#basic-components-of-a-ggplot2-plot"><span class="toc-section-number">3.6.1</span>  Basic components of a ggplot2 plot</a></li>
   </ul></li>
-  <li><a href="#building-up-in-layers" id="toc-building-up-in-layers" class="nav-link" data-scroll-target="#building-up-in-layers"><span class="toc-section-number">2.7</span>  Building up in layers</a>
+  <li><a href="#building-up-in-layers" id="toc-building-up-in-layers" class="nav-link" data-scroll-target="#building-up-in-layers"><span class="toc-section-number">3.7</span>  Building up in layers</a>
   <ul class="collapse">
-  <li><a href="#palmerpenguins-dataset" id="toc-palmerpenguins-dataset" class="nav-link" data-scroll-target="#palmerpenguins-dataset"><span class="toc-section-number">2.7.1</span>  <code>palmerpenguins</code> dataset</a></li>
-  <li><a href="#first-plot-with-point-layer" id="toc-first-plot-with-point-layer" class="nav-link" data-scroll-target="#first-plot-with-point-layer"><span class="toc-section-number">2.7.2</span>  First plot with point layer</a></li>
-  <li><a href="#adding-more-layers" id="toc-adding-more-layers" class="nav-link" data-scroll-target="#adding-more-layers"><span class="toc-section-number">2.7.3</span>  Adding more layers</a></li>
+  <li><a href="#palmerpenguins-dataset" id="toc-palmerpenguins-dataset" class="nav-link" data-scroll-target="#palmerpenguins-dataset"><span class="toc-section-number">3.7.1</span>  <code>palmerpenguins</code> dataset</a></li>
+  <li><a href="#first-plot-with-point-layer" id="toc-first-plot-with-point-layer" class="nav-link" data-scroll-target="#first-plot-with-point-layer"><span class="toc-section-number">3.7.2</span>  First plot with point layer</a></li>
+  <li><a href="#adding-more-layers" id="toc-adding-more-layers" class="nav-link" data-scroll-target="#adding-more-layers"><span class="toc-section-number">3.7.3</span>  Adding more layers</a></li>
   </ul></li>
-  <li><a href="#session-info" id="toc-session-info" class="nav-link" data-scroll-target="#session-info"><span class="toc-section-number">2.8</span>  Session Info</a></li>
+  <li><a href="#session-info" id="toc-session-info" class="nav-link" data-scroll-target="#session-info"><span class="toc-section-number">3.8</span>  Session Info</a></li>
   </ul>
 </nav>
     </div>
@@ -239,7 +254,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tidyverse and data viz</span></h1>
 </div>
 
 <div>
@@ -261,8 +276,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="learning-objectives" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2.1</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">3.1</span> Learning objectives</h2>
 <ul>
 <li>Know difference between relative vs absolute paths</li>
 <li>Use modern R packages (<code>readr</code>) for reading and writing data in R</li>
@@ -273,11 +288,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Be able to build up layers of graphics using <code>ggplot()</code></li>
 </ul>
 </section>
-<section id="reading-and-writing-data" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="reading-and-writing-data"><span class="header-section-number">2.2</span> Reading and writing data</h2>
+<section id="reading-and-writing-data" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="reading-and-writing-data"><span class="header-section-number">3.2</span> Reading and writing data</h2>
 <p>Here, we introduce ays to read and write data (e.g.&nbsp;<code>.txt</code> and <code>.csv</code> files) using base R functions as well as more modern R packages, such as <code>readr</code>, which is typically <a href="https://r4ds.had.co.nz/data-import.html#compared-to-base-r">10x faster than base R</a>.</p>
-<section id="relative-paths" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="relative-paths"><span class="header-section-number">2.2.1</span> Relative paths</h3>
+<section id="relative-paths" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="relative-paths"><span class="header-section-number">3.2.1</span> Relative paths</h3>
 <p>When you open up a <code>.Rproj</code> file, RStudio changes the path (location on your computer) to the <code>.Rproj</code> location.</p>
 <p>After opening up a <code>.Rproj</code> file, you can test this by</p>
 <div class="cell">
@@ -309,8 +324,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>For more on project-oriented workflow suggestions, read <a href="https://www.tidyverse.org/articles/2017/12/workflow-vs-script/">this post</a> from Jenny Bryan.</li>
 </ul>
 </section>
-<section id="the-here-package" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="the-here-package"><span class="header-section-number">2.2.2</span> The <code>here</code> package</h3>
+<section id="the-here-package" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="the-here-package"><span class="header-section-number">3.2.2</span> The <code>here</code> package</h3>
 <p>Let’s try using the <code>here</code> package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -326,11 +341,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(here<span class="sc">::</span><span class="fu">here</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "_book"               "_freeze"             "_quarto.yml"        
- [4] "cover.png"           "cshlcg2022.Rproj"    "data"               
- [7] "exercises.qmd"       "index.qmd"           "intro.qmd"          
-[10] "references.bib"      "references.qmd"      "tidyverse.qmd"      
-[13] "tidyverse.rmarkdown"</code></pre>
+<pre><code> [1] "_book"                  "_freeze"                "_quarto.yml"           
+ [4] "cover.png"              "cshlcg2022.Rproj"       "data"                  
+ [7] "exercises-01.html"      "exercises-01.qmd"       "exercises-02.html"     
+[10] "exercises-02.qmd"       "exercises-03.qmd"       "index.html"            
+[13] "index.qmd"              "intro-to-r.html"        "intro-to-r.qmd"        
+[16] "references.bib"         "references.qmd"         "reproducible-res_files"
+[19] "reproducible-res.html"  "reproducible-res.qmd"   "site_libs"             
+[22] "tidyverse.qmd"          "tidyverse.rmarkdown"   </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">here</span>(<span class="st">"data"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -344,8 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Now we see that using the <code>here::here()</code> function is a <em>relative</em> path (relative to the <code>.Rproj</code> file in our <code>cshlcg2022</code> folder.</p>
 <p>Next, let’s use the <code>here</code> package to read in some data with the <code>readr</code> package.</p>
 </section>
-<section id="the-readr-package" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="the-readr-package"><span class="header-section-number">2.2.3</span> The <code>readr</code> package</h3>
+<section id="the-readr-package" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="the-readr-package"><span class="header-section-number">3.2.3</span> The <code>readr</code> package</h3>
 <p>The <code>readr</code> package is recently developed by posit (formerly RStudio) to deal with reading in large flat files quickly. The package provides replacements for functions like <code>read.table()</code> and <code>read.csv()</code>. The analogous functions in <code>readr</code> are <code>read_table()</code> and <code>read_csv()</code>.</p>
 <p>These functions are often <em>much</em> faster than their base R analogues and provide a few other nice features such as progress meters.</p>
 <p>For example, the package includes a variety of functions in the <code>read_*()</code> family that allow you to read in data from different formats of flat files. The following table gives a guide to several functions in the <code>read_*()</code> family.</p>
@@ -421,21 +439,21 @@ dbl (1): Standing
 </div>
 </section>
 </section>
-<section id="data-frames-and-tibbles" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="data-frames-and-tibbles"><span class="header-section-number">2.3</span> Data frames and tibbles</h2>
+<section id="data-frames-and-tibbles" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="data-frames-and-tibbles"><span class="header-section-number">3.3</span> Data frames and tibbles</h2>
 <p>The <strong>data frame</strong> (or <code>data.frame</code>) is a <strong>key data structure</strong> in statistics and in R.</p>
 <p>The basic structure of a data frame is that there is <strong>one observation per row and each column represents a variable, a measure, feature, or characteristic of that observation</strong>.</p>
 <p>Given the importance of managing data frames, it is <strong>important that we have good tools for dealing with them.</strong></p>
 <p>For example, <strong>operations</strong> like filtering rows, re-ordering rows, and selecting columns, can often be tedious operations in R whose syntax is not very intuitive. The <code>dplyr</code> package in the <code>tidyverse</code> is designed to mitigate a lot of these problems and to provide a highly optimized set of routines specifically for dealing with data frames.</p>
-<section id="tibbles" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="tibbles"><span class="header-section-number">2.3.1</span> Tibbles</h3>
+<section id="tibbles" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="tibbles"><span class="header-section-number">3.3.1</span> Tibbles</h3>
 <p>Another type of data structure that we need to discuss is called the <strong>tibble</strong>! It’s best to think of tibbles as an updated and stylish version of the <code>data.frame</code>.</p>
 <p>Tibbles are what tidyverse packages work with most seamlessly. Now, that <strong>does not mean tidyverse packages <em>require</em> tibbles</strong>.</p>
 <p>In fact, they still work with <code>data.frames</code>, but the more you work with tidyverse and tidyverse-adjacent packages, the more you will see the advantages of using tibbles.</p>
 <p>Before we go any further, tibbles <em>are</em> data frames, but they have some new bells and whistles to make your life easier.</p>
 </section>
-<section id="how-tibbles-differ-from-data.frame" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="how-tibbles-differ-from-data.frame"><span class="header-section-number">2.3.2</span> How tibbles differ from <code>data.frame</code></h3>
+<section id="how-tibbles-differ-from-data.frame" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="how-tibbles-differ-from-data.frame"><span class="header-section-number">3.3.2</span> How tibbles differ from <code>data.frame</code></h3>
 <p>There are a number of differences between tibbles and <code>data.frames</code>.</p>
 <p><strong>Note</strong>: To see a full vignette about tibbles and how they differ from data.frame, you will want to execute <code>vignette("tibble")</code> and read through that vignette.</p>
 <p>We will summarize some of the most important points here:</p>
@@ -446,8 +464,8 @@ dbl (1): Standing
 <li><strong>Tibbles print first ten rows and columns that fit on one screen</strong> - Printing a tibble to screen will never print the entire huge data frame out. By default, it just shows what fits to your screen.</li>
 </ul>
 </section>
-<section id="as_tibble" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="as_tibble"><span class="header-section-number">2.3.3</span> <code>as_tibble()</code></h3>
+<section id="as_tibble" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="as_tibble"><span class="header-section-number">3.3.3</span> <code>as_tibble()</code></h3>
 <p>Since many packages use the historical <code>data.frame</code> from base R, you will often find yourself in the situation that you have a <code>data.frame</code> and want to convert that <code>data.frame</code> to a <code>tibbl</code>e.</p>
 <p>To do so, the <code>as_tibble()</code> function is exactly what you are looking for.</p>
 <p>For the example, here we use a dataset (<code>chicago.rds</code>) containing air pollution and temperature data for the city of Chicago in the U.S.</p>
@@ -493,15 +511,15 @@ dbl (1): Standing
 </div>
 </section>
 </section>
-<section id="the-dplyr-package" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="the-dplyr-package"><span class="header-section-number">2.4</span> The <code>dplyr</code> package</h2>
+<section id="the-dplyr-package" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="the-dplyr-package"><span class="header-section-number">3.4</span> The <code>dplyr</code> package</h2>
 <p>The <code>dplyr</code> package was developed by Posit (formely RStudio) and is <strong>an optimized and distilled</strong> version of the older <code>plyr</code> <strong>package for data manipulation or wrangling</strong>.</p>
 <p>The <code>dplyr</code> package does not provide any “new” functionality to R per se, in the sense that everything <code>dplyr</code> does could already be done with base R, but it <strong>greatly</strong> simplifies existing functionality in R.</p>
 <p>One important contribution of the <code>dplyr</code> package is that it <strong>provides a “grammar” (in particular, verbs) for data manipulation and for operating on data frames</strong>.</p>
 <p>With this grammar, you can sensibly communicate what it is that you are doing to a data frame that other people can understand (assuming they also know the grammar). This is useful because it <strong>provides an abstraction for data manipulation that previously did not exist</strong>.</p>
 <p>Another useful contribution is that the <code>dplyr</code> functions are <strong>very</strong> fast, as many key operations are coded in C++.</p>
-<section id="dplyr-grammar" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="dplyr-grammar"><span class="header-section-number">2.4.1</span> <code>dplyr</code> grammar</h3>
+<section id="dplyr-grammar" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="dplyr-grammar"><span class="header-section-number">3.4.1</span> <code>dplyr</code> grammar</h3>
 <p>Some of the key “verbs” provided by the <code>dplyr</code> package are</p>
 <ul>
 <li><p><code>select()</code>: return a subset of the columns of a data frame, using a flexible notation</p></li>
@@ -527,8 +545,8 @@ Note
 </div>
 </div>
 </section>
-<section id="dplyr-installation" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="dplyr-installation"><span class="header-section-number">2.4.2</span> <code>dplyr</code> installation</h3>
+<section id="dplyr-installation" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="dplyr-installation"><span class="header-section-number">3.4.2</span> <code>dplyr</code> installation</h3>
 <p>The <code>dplyr</code> package is installed when you install and load the <code>tidyverse</code> meta-package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -536,8 +554,8 @@ Note
 <p>You may get some warnings when the package is loaded because there are functions in the <code>dplyr</code> package that have the same name as functions in other packages. For now you can ignore the warnings.</p>
 </section>
 </section>
-<section id="dplyr-functions" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="dplyr-functions"><span class="header-section-number">2.5</span> <code>dplyr</code> functions</h2>
+<section id="dplyr-functions" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="dplyr-functions"><span class="header-section-number">3.5</span> <code>dplyr</code> functions</h2>
 <p>All of the functions that we will discuss here will have a few common characteristics. In particular,</p>
 <ol type="1">
 <li><p>The <strong>first argument</strong> is a data frame type object.</p></li>
@@ -545,8 +563,8 @@ Note
 <li><p>The <strong>return result</strong> of a function is a new data frame.</p></li>
 <li><p>Data frames must be <strong>properly formatted</strong> and annotated for this to all be useful. In particular, the data must be <a href="http://www.jstatsoft.org/v59/i10/paper">tidy</a>. In short, there should be one observation per row, and each column should represent a feature or characteristic of that observation.</p></li>
 </ol>
-<section id="select" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="select"><span class="header-section-number">2.5.1</span> <code>select()</code></h3>
+<section id="select" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="select"><span class="header-section-number">3.5.1</span> <code>select()</code></h3>
 <p>We will continue to use the <code>chicago</code> dataset containing air pollution and temperature data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>chicago <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(chicago)</span>
@@ -648,8 +666,8 @@ Note
 </div>
 <p>You can also use more general regular expressions if necessary. See the help page (<code>?select</code>) for more details.</p>
 </section>
-<section id="filter" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="filter"><span class="header-section-number">2.5.2</span> <code>filter()</code></h3>
+<section id="filter" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="filter"><span class="header-section-number">3.5.2</span> <code>filter()</code></h3>
 <p>The <code>filter()</code> function is used to <strong>extract subsets of rows</strong> from a data frame. This function is similar to the existing <code>subset()</code> function in R but is quite a bit faster in my experience.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -775,8 +793,8 @@ Example
 <p><strong>Note</strong>: If you are ever unsure of how to write a logical statement, but know how to write its opposite, you can use the <code>!</code> operator to negate the whole statement.</p>
 <p>A common use of this is to identify observations with non-missing data (e.g., <code>!(is.na(pm10tmean2))</code>).</p>
 </section>
-<section id="arrange" class="level3" data-number="2.5.3">
-<h3 data-number="2.5.3" class="anchored" data-anchor-id="arrange"><span class="header-section-number">2.5.3</span> <code>arrange()</code></h3>
+<section id="arrange" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="arrange"><span class="header-section-number">3.5.3</span> <code>arrange()</code></h3>
 <p>The <code>arrange()</code> function is used to <strong>reorder rows</strong> of a data frame according to one of the variables/columns. Reordering rows of a data frame (while preserving corresponding order of other columns) is normally a pain to do in R. The <code>arrange()</code> function simplifies the process quite a bit.</p>
 <p>Here we can order the rows of the data frame by date, so that the first row is the earliest (oldest) observation and the last row is the latest (most recent) observation.</p>
 <div class="cell">
@@ -832,8 +850,8 @@ Example
 </div>
 </div>
 </section>
-<section id="rename" class="level3" data-number="2.5.4">
-<h3 data-number="2.5.4" class="anchored" data-anchor-id="rename"><span class="header-section-number">2.5.4</span> <code>rename()</code></h3>
+<section id="rename" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="rename"><span class="header-section-number">3.5.4</span> <code>rename()</code></h3>
 <p><strong>Renaming a variable</strong> in a data frame in R is surprisingly hard to do! The <code>rename()</code> function is designed to make this process easier.</p>
 <p>Here you can see the names of the first five variables in the <code>chicago</code> data frame.</p>
 <div class="cell">
@@ -863,8 +881,8 @@ Example
 </div>
 <p>The syntax inside the <code>rename()</code> function is to have the new name on the left-hand side of the <code>=</code> sign and the old name on the right-hand side.</p>
 </section>
-<section id="mutate" class="level3" data-number="2.5.5">
-<h3 data-number="2.5.5" class="anchored" data-anchor-id="mutate"><span class="header-section-number">2.5.5</span> <code>mutate()</code></h3>
+<section id="mutate" class="level3" data-number="3.5.5">
+<h3 data-number="3.5.5" class="anchored" data-anchor-id="mutate"><span class="header-section-number">3.5.5</span> <code>mutate()</code></h3>
 <p>The <code>mutate()</code> function exists to <strong>compute transformations of variables</strong> in a data frame. Often, you want to create new variables that are derived from existing variables and <code>mutate()</code> provides a clean interface for doing that.</p>
 <p>For example, with air pollution data, we often want to <em>detrend</em> the data by subtracting the mean from the data.</p>
 <ul>
@@ -907,8 +925,8 @@ Example
 </div>
 <p>Note that there are only two columns in the transmuted data frame.</p>
 </section>
-<section id="group_by" class="level3" data-number="2.5.6">
-<h3 data-number="2.5.6" class="anchored" data-anchor-id="group_by"><span class="header-section-number">2.5.6</span> <code>group_by()</code></h3>
+<section id="group_by" class="level3" data-number="3.5.6">
+<h3 data-number="3.5.6" class="anchored" data-anchor-id="group_by"><span class="header-section-number">3.5.6</span> <code>group_by()</code></h3>
 <p>The <code>group_by()</code> function is used to <strong>generate summary statistics</strong> from the data frame within strata defined by a variable.</p>
 <p>For example, in this air pollution dataset, you might want to know what the average annual level of PM2.5 is?</p>
 <p>So the stratum is the year, and that is something we can derive from the <code>date</code> variable.</p>
@@ -971,8 +989,8 @@ Example
 </div>
 </div>
 </section>
-<section id="section" class="level3" data-number="2.5.7">
-<h3 data-number="2.5.7" class="anchored" data-anchor-id="section"><span class="header-section-number">2.5.7</span> <code>%&gt;%</code></h3>
+<section id="section" class="level3" data-number="3.5.7">
+<h3 data-number="3.5.7" class="anchored" data-anchor-id="section"><span class="header-section-number">3.5.7</span> <code>%&gt;%</code></h3>
 <p>The pipeline operator <code>%&gt;%</code> is very handy for <strong>stringing together multiple <code>dplyr</code> functions in a sequence of operations</strong>.</p>
 <p>Notice above that every time we wanted to apply more than one function, the sequence gets buried in a sequence of nested function calls that is difficult to read, i.e.</p>
 <div class="cell">
@@ -1042,8 +1060,8 @@ Note
 </div>
 </div>
 </section>
-<section id="slice_" class="level3" data-number="2.5.8">
-<h3 data-number="2.5.8" class="anchored" data-anchor-id="slice_"><span class="header-section-number">2.5.8</span> <code>slice_*()</code></h3>
+<section id="slice_" class="level3" data-number="3.5.8">
+<h3 data-number="3.5.8" class="anchored" data-anchor-id="slice_"><span class="header-section-number">3.5.8</span> <code>slice_*()</code></h3>
 <p>The <code>slice_sample()</code> function of the <code>dplyr</code> package will allow you to see a <strong>sample of random rows</strong> in random order.</p>
 <p>The number of rows to show is specified by the <code>n</code> argument.</p>
 <ul>
@@ -1066,16 +1084,16 @@ Example
 <pre><code># A tibble: 10 × 10
    city   tmpd dewpoint date        pm25 pm10tme…¹ o3tme…² no2tm…³ pm25d…⁴  year
    &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;date&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
- 1 chic   61.5    59.1  1996-06-10  NA        29     21.7     25.2   NA     1996
- 2 chic   76      49.4  1998-05-18  13.2      79     38.1     31.3   -3.03  1998
- 3 chic   47      43.5  1990-10-09  NA        NA     20.1     10.3   NA     1990
- 4 chic   12       9.12 1989-02-07  NA        56     14.8     28.5   NA     1989
- 5 chic   74.5    66.1  1991-06-01  NA        41     34.0     29.5   NA     1991
- 6 chic   23.5    19.5  1991-02-27  NA        37     14.8     22.3   NA     1991
- 7 chic    9       5.25 1989-02-05  NA        NA      6.08    24.6   NA     1989
- 8 chic   33      26.6  1998-02-02  NA        19.5    8.76    24.0   NA     1998
- 9 chic   62      56    2002-06-03  18.1      36.5   21.8     22.6    1.87  2002
-10 chic   46      40.6  2001-10-05   8.7      18.5    5.29    25.1   -7.53  2001
+ 1 chic   68       57.9 1998-09-03  19.3      42     25.6     31.7    3.07  1998
+ 2 chic   24       20.6 1996-02-15  NA        22.2    9.96    30.7   NA     1996
+ 3 chic   39       36.1 1997-10-28  NA        30.5    6.02    27.8   NA     1997
+ 4 chic   38       29.3 1999-11-16  NA        16.5   12.0     23.3   NA     1999
+ 5 chic   39       34.2 2004-12-08  13.9      27      7.51    22.0   -2.29  2004
+ 6 chic   66       46.3 1999-09-23  NA        44.5   24.9     26.6   NA     1999
+ 7 chic   33.5     26.6 1995-02-02  NA        16.4   17.4     23.7   NA     1995
+ 8 chic   74       60.6 2003-09-11  37.8      58.5   39.2     26.9   21.6   2003
+ 9 chic   54       44.4 2005-05-11  NA        17     26.6     12.0   NA     2005
+10 chic   82       67.4 2002-06-20  33        80.5   47.4     30.8   16.8   2002
 # … with abbreviated variable names ¹​pm10tmean2, ²​o3tmean2, ³​no2tmean2,
 #   ⁴​pm25detrend</code></pre>
 </div>
@@ -1115,11 +1133,11 @@ Example
 </div>
 </section>
 </section>
-<section id="the-ggplot2-plotting-system" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="the-ggplot2-plotting-system"><span class="header-section-number">2.6</span> The ggplot2 Plotting System</h2>
+<section id="the-ggplot2-plotting-system" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="the-ggplot2-plotting-system"><span class="header-section-number">3.6</span> The ggplot2 Plotting System</h2>
 <p>In this section, we will get into a little more of the nitty gritty of <strong>how <code>ggplot2</code> builds plots</strong> and how you can customize various aspects of any plot.</p>
-<section id="basic-components-of-a-ggplot2-plot" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="basic-components-of-a-ggplot2-plot"><span class="header-section-number">2.6.1</span> Basic components of a ggplot2 plot</h3>
+<section id="basic-components-of-a-ggplot2-plot" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="basic-components-of-a-ggplot2-plot"><span class="header-section-number">3.6.1</span> Basic components of a ggplot2 plot</h3>
 <p>A <strong><code>ggplot2</code> plot</strong> consists of a number of <strong>key components</strong>.</p>
 <ul>
 <li><p>A <strong>data frame</strong>: stores all of the data that will be displayed on the plot</p></li>
@@ -1154,11 +1172,11 @@ Note
 </div>
 </section>
 </section>
-<section id="building-up-in-layers" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="building-up-in-layers"><span class="header-section-number">2.7</span> Building up in layers</h2>
+<section id="building-up-in-layers" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="building-up-in-layers"><span class="header-section-number">3.7</span> Building up in layers</h2>
 <p>First, we can <strong>create a <code>ggplot</code> object</strong> that stores the dataset and the basic aesthetics for mapping the x- and y-coordinates for the plot.</p>
-<section id="palmerpenguins-dataset" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="palmerpenguins-dataset"><span class="header-section-number">2.7.1</span> <code>palmerpenguins</code> dataset</h3>
+<section id="palmerpenguins-dataset" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="palmerpenguins-dataset"><span class="header-section-number">3.7.1</span> <code>palmerpenguins</code> dataset</h3>
 <p>Here we will use the <a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a> dataset. These data contain observations for 344 penguins. There are 3 different species of penguins in this dataset, collected from 3 islands in the Palmer Archipelago, Antarctica.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -1250,8 +1268,8 @@ faceting: &lt;ggproto object: Class FacetNull, Facet, gg&gt;
 </div>
 </div>
 </section>
-<section id="first-plot-with-point-layer" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="first-plot-with-point-layer"><span class="header-section-number">2.7.2</span> First plot with point layer</h3>
+<section id="first-plot-with-point-layer" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="first-plot-with-point-layer"><span class="header-section-number">3.7.2</span> First plot with point layer</h3>
 <p>To make a scatter plot, we need add at least one <strong>geom</strong>, such as points.</p>
 <p>Here, we add the <code>geom_point()</code> function to create a traditional scatter plot.</p>
 <div class="cell">
@@ -1268,10 +1286,10 @@ faceting: &lt;ggproto object: Class FacetNull, Facet, gg&gt;
 </div>
 <p>How does ggplot know what points to plot? In this case, it can grab them from the data frame <code>penguins</code> that served as the input into the <code>ggplot()</code> function.</p>
 </section>
-<section id="adding-more-layers" class="level3" data-number="2.7.3">
-<h3 data-number="2.7.3" class="anchored" data-anchor-id="adding-more-layers"><span class="header-section-number">2.7.3</span> Adding more layers</h3>
-<section id="smooth" class="level4" data-number="2.7.3.1">
-<h4 data-number="2.7.3.1" class="anchored" data-anchor-id="smooth"><span class="header-section-number">2.7.3.1</span> smooth</h4>
+<section id="adding-more-layers" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="adding-more-layers"><span class="header-section-number">3.7.3</span> Adding more layers</h3>
+<section id="smooth" class="level4" data-number="3.7.3.1">
+<h4 data-number="3.7.3.1" class="anchored" data-anchor-id="smooth"><span class="header-section-number">3.7.3.1</span> smooth</h4>
 <p>Because the data appear rather noisy, it might be better if we added a smoother on top of the points to see if there is a trend in the data with PM2.5.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> </span>
@@ -1327,8 +1345,8 @@ faceting: &lt;ggproto object: Class FacetNull, Facet, gg&gt;
 </div>
 </div>
 </section>
-<section id="facets" class="level4" data-number="2.7.3.2">
-<h4 data-number="2.7.3.2" class="anchored" data-anchor-id="facets"><span class="header-section-number">2.7.3.2</span> facets</h4>
+<section id="facets" class="level4" data-number="3.7.3.2">
+<h4 data-number="3.7.3.2" class="anchored" data-anchor-id="facets"><span class="header-section-number">3.7.3.2</span> facets</h4>
 <p>We can also stratify the scatter plot by another variable (e.g.&nbsp;<code>sex</code>) by <strong>adding a <code>facet_grid()</code></strong> or <code>facet_wrap()</code> function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> </span>
@@ -1344,8 +1362,8 @@ faceting: &lt;ggproto object: Class FacetNull, Facet, gg&gt;
 </div>
 </div>
 </section>
-<section id="changing-the-theme" class="level4" data-number="2.7.3.3">
-<h4 data-number="2.7.3.3" class="anchored" data-anchor-id="changing-the-theme"><span class="header-section-number">2.7.3.3</span> Changing the theme</h4>
+<section id="changing-the-theme" class="level4" data-number="3.7.3.3">
+<h4 data-number="3.7.3.3" class="anchored" data-anchor-id="changing-the-theme"><span class="header-section-number">3.7.3.3</span> Changing the theme</h4>
 <p>The <strong>default theme for <code>ggplot2</code> uses the gray background</strong> with white grid lines.</p>
 <p>If you don’t find this suitable, you can use the black and white theme by using the <code>theme_bw()</code> function.</p>
 <p>The <code>theme_bw()</code> function also allows you to set the typeface for the plot, in case you don’t want the default Helvetica. Here we change the typeface to Times.</p>
@@ -1370,8 +1388,8 @@ faceting: &lt;ggproto object: Class FacetNull, Facet, gg&gt;
 </div>
 </div>
 </section>
-<section id="modifying-labels" class="level4" data-number="2.7.3.4">
-<h4 data-number="2.7.3.4" class="anchored" data-anchor-id="modifying-labels"><span class="header-section-number">2.7.3.4</span> Modifying labels</h4>
+<section id="modifying-labels" class="level4" data-number="3.7.3.4">
+<h4 data-number="3.7.3.4" class="anchored" data-anchor-id="modifying-labels"><span class="header-section-number">3.7.3.4</span> Modifying labels</h4>
 <p>There are a variety of <strong>annotations</strong> you can add to a plot, including <strong>different kinds of labels</strong>.</p>
 <ul>
 <li><code>xlab()</code> for x-axis labels</li>
@@ -1406,8 +1424,8 @@ faceting: &lt;ggproto object: Class FacetNull, Facet, gg&gt;
 </section>
 </section>
 </section>
-<section id="session-info" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="session-info"><span class="header-section-number">2.8</span> Session Info</h2>
+<section id="session-info" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="session-info"><span class="header-section-number">3.8</span> Session Info</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1562,13 +1580,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./exercises-02.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Group work</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./exercises.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Exercises</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./exercises-03.html" class="pagination-link">
+        <span class="nav-page-text">Workshop</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

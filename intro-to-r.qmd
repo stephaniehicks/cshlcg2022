@@ -4,12 +4,13 @@
 
 ## Acknowledgements
 
-Material for this lecture was borrowed and adopted from
+Material for this chapter was borrowed and adopted from
 
 -   <https://rdpeng.github.io/Biostat776/lecture-introduction-and-overview.html>
 -   <https://rafalab.github.io/dsbook>
 -   <https://rmd4sci.njtierney.com>
 -   <https://andreashandel.github.io/MADAcourse>
+
 
 ::: callout-tip
 ### Additional Resources
@@ -46,16 +47,12 @@ Like every programming language, R has its advantages and disadvantages. If you 
 -   R is a ["high-level" programming language](https://en.wikipedia.org/wiki/High-level_programming_language), relatively easy to learn.
     -   While "Low-level" programming languages (e.g. Fortran, C, etc) often have more efficient code, they can also be harder to learn because it is designed to be close to a machine language.
     -   In contrast, high-level languages deal more with variables, objects, functions, loops, and other abstract CS concepts with a focus on usability over optimal program efficiency.
--   R integrates easily with document preparation systems like $\LaTeX$, but R files can also be used to create `.docx`, `.pdf`, `.html`, `.ppt` files with integrated R code output and graphics.
+-   R integrates easily with document preparation systems like LaTeX, but R files can also be used to create `.docx`, `.pdf`, `.html`, `.ppt` files with integrated R code output and graphics.
 -   The R Community is very dynamic, helpful and welcoming.
     -   Check out the [#rstats](https://twitter.com/search?q=%23rstats) or [#rtistry](https://twitter.com/search?q=%23rtistry) on Twitter, [TidyTuesday](https://www.tidytuesday.com) podcast and community activity in the [R4DS Online Learning Community](https://www.rfordatasci.com), and [r/rstats](https://www.reddit.com/r/rstats/) subreddit.
     -   If you are looking for more local resources, check out [R-Ladies Baltimore](https://www.meetup.com/rladies-baltimore/).
 -   Through R packages, it is easy to get lots of state-of-the-art algorithms.
 -   Documentation and help files for R are generally good.
-
-![Artwork by Allison Horst on learning R](https://github.com/allisonhorst/stats-illustrations/raw/main/rstats-artwork/r_first_then.png){width="80%"}
-
-\[**Source**: [Artwork by Allison Horst](https://github.com/allisonhorst/stats-illustrations)\]
 
 ### Basic Features of R
 
@@ -149,8 +146,6 @@ Installing R and RStudio should be fairly straightforward. However, a great set 
 -   <https://rafalab.github.io/dsbook/installing-r-rstudio.html>
 :::
 
-If things don't work, ask for help in the Courseplus discussion board.
-
 I personally only have experience with Mac, but everything should work on all the standard operating systems (Windows, Mac, and even Linux).
 
 ### RStudio default options
@@ -179,7 +174,7 @@ Additionally, not saving your history means that you won't be relying on things 
 
 ### Installing and loading R packages
 
-As we discussed, most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not. We will be using many different packages in this course. Of course, you are free to install and use any package you come across for any of the assignments.
+As we discussed, most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not. 
 
 The "official" place for packages is the [CRAN website](https://cran.r-project.org/web/packages/available_packages_by_name.html). If you are interested in packages on a specific topic, the [CRAN task views](http://cran.r-project.org/web/views/) provide curated descriptions of packages sorted by topic.
 
@@ -221,7 +216,6 @@ It is very common these days for packages to be developed on GitHub. It is possi
 remotes::install_github()
 ```
 
-We will not do that now, but it is quite likely that at one point later in this course we will.
 
 You only need to install a package once, unless you upgrade/re-install R. Once installed, you still need to load the package before you can use it. That has to happen every time you start a new R session. You do that using the `library()` command. For instance to load the `ggplot2` package, type
 
