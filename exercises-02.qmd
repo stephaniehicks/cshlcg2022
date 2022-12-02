@@ -12,3 +12,8 @@ Let's take 5 mins and pair up with another person. Pick out a few of the questio
 4.  What is literate programming?
 5.  What is `knitr` and how is different than other literate statistical programming tools?
 6.  Where can you find a list of other commands that help make your code writing more efficient in RStudio?
+
+## On your own at a computer
+
+1. Open up RStudio, and follow these instructions to [Create and Knit Your First R Markdown Document](https://www.stephaniehicks.com/cshlcg2022/reproducible-res.html#create-and-knit-your-first-r-markdown-document).
+2. Try out some of the [Tips and tricks in R Markdown in RStudio](https://www.stephaniehicks.com/cshlcg2022/reproducible-res.html#tips-and-tricks-in-r-markdown-in-rstudio).

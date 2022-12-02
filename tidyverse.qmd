@@ -10,8 +10,6 @@ library(tidyverse)
 
 > "Tidy datasets are all alike, but every messy dataset is messy in its own way." ---- Hadley Wickham
 
-
-
 ## Learning objectives
 
 -   Know difference between relative vs absolute paths
@@ -150,7 +148,11 @@ Before we go any further, tibbles *are* data frames, but they have some new bell
 
 There are a number of differences between tibbles and `data.frames`.
 
-**Note**: To see a full vignette about tibbles and how they differ from data.frame, you will want to execute `vignette("tibble")` and read through that vignette.
+:::{.callout-note}
+
+To see a full vignette about tibbles and how they differ from data.frame, you will want to execute `vignette("tibble")` and read through that vignette.
+
+:::
 
 We will summarize some of the most important points here:
 

@@ -1,31 +1,27 @@
 # Preface {.unnumbered}
 
-Welcome to the course material from Stephanie Hicks at the CSHL Computational Genomics 2022 course! 
-
+Welcome to the course material from Stephanie Hicks at the CSHL Computational Genomics 2022 course!
 
 ## Key resources
 
-- Workshop material: <https://stephaniehicks.com/cshlcg2022>
-- Code on GitHub: <https://github.com/stephaniehicks/cshlcg2022>
+-   Course material: <https://stephaniehicks.com/cshlcg2022>
+-   Code on GitHub: <https://github.com/stephaniehicks/cshlcg2022>
 
 ## Instructor
 
-```md
+``` md
 Stephanie C. Hicks, PhD
 Associate Professor, Biostatistics, Johns Hopkins Bloomberg School of Public Health
 Faculty member, Johns Hopkins Data Science Lab
 Pronouns: she/her 
 ```
 
-- web: https://www.stephaniehicks.com
-- email: shicks19@jhu.edu
-- twitter: [stephaniehicks](http://twitter.com/stephaniehicks)
-
+-   web: https://www.stephaniehicks.com
+-   email: shicks19\@jhu.edu
+-   twitter: @[stephaniehicks](http://twitter.com/stephaniehicks)
 
 ## Acknowledgements
 
 This course website was developed and is maintained by Stephanie C. Hicks.
-
-The following individuals have contributed to improving the course or materials have been adapted from their courses: 
 
 The course materials are licensed under the GPL-3 License. Linked and embedded materials are governed by their own licenses. I assume that all external materials used or embedded here are covered under the educational fair use policy. If this is not the case and any material displayed here violates copyright, please let me know and I will remove it.

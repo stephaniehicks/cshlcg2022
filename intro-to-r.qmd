@@ -1,4 +1,4 @@
-# Introduction to R 
+# Introduction to R
 
 > There are only two kinds of languages: the ones people complain about and the ones nobody uses. ---*Bjarne Stroustrup*
 
@@ -11,18 +11,16 @@ Material for this chapter was borrowed and adopted from
 -   <https://rmd4sci.njtierney.com>
 -   <https://andreashandel.github.io/MADAcourse>
 
-
 ::: callout-tip
 ### Additional Resources
 
-- [An overview and history of R](https://rdpeng.github.io/Biostat776/lecture-introduction-and-overview.html) from Roger Peng
-- [Installing R and RStudio](https://rafalab.github.io/dsbook/installing-r-rstudio.html) from Rafael Irizarry
-- [Getting Started in R and RStudio](https://rafalab.github.io/dsbook/getting-started.html) from Rafael Irizarry
-- [R for Data Science](https://r4ds.had.co.nz) by Wickham & Grolemund (2017). Covers most of the basics of using R for data analysis.
-- [Advanced R](https://adv-r.hadley.nz) by Wickham (2014). Covers a number of areas including object-oriented, programming, functional programming, profiling and other advanced topics.
-- [RStudio IDE cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+-   [An overview and history of R](https://rdpeng.github.io/Biostat776/lecture-introduction-and-overview.html) from Roger Peng
+-   [Installing R and RStudio](https://rafalab.github.io/dsbook/installing-r-rstudio.html) from Rafael Irizarry
+-   [Getting Started in R and RStudio](https://rafalab.github.io/dsbook/getting-started.html) from Rafael Irizarry
+-   [R for Data Science](https://r4ds.had.co.nz) by Wickham & Grolemund (2017). Covers most of the basics of using R for data analysis.
+-   [Advanced R](https://adv-r.hadley.nz) by Wickham (2014). Covers a number of areas including object-oriented, programming, functional programming, profiling and other advanced topics.
+-   [RStudio IDE cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
 :::
-
 
 ## Learning objectives
 
@@ -39,7 +37,7 @@ Material for this chapter was borrowed and adopted from
 
 ## Overview and history of R
 
-Below is a very quick introduction to R, to get you set up and running. 
+Below is a very quick introduction to R, to get you set up and running.
 
 Like every programming language, R has its advantages and disadvantages. If you search the internet, you will quickly discover lots of folks with opinions about R. Some of the features that are useful to know are:
 
@@ -58,15 +56,20 @@ Like every programming language, R has its advantages and disadvantages. If you 
 
 Today R runs on almost any standard computing platform and operating system.
 
-Its open source nature means that anyone is free to adapt the software to whatever platform they choose. 
+Its open source nature means that anyone is free to adapt the software to whatever platform they choose.
 
-One nice feature that R shares with many popular open source projects is frequent releases. 
+One nice feature that R shares with many popular open source projects is **frequent releases**. 
+
 - These days there is a major annual release, typically in October, where major new features are incorporated and released to the public. 
-- Throughout the year, smaller-scale bugfix releases will be made as needed. 
+- Throughout the year, smaller-scale bugfix releases will be made as needed.
 
-Another key advantage that R has over many other packages (even today) is its sophisticated graphics capabilities. R's ability to create "publication quality" graphics has existed since the very beginning and has generally been better than competing packages. Today, with many more visualization packages available than before, that trend continues. 
+Another key advantage that R has over many other packages (even today) is its **sophisticated graphics capabilities**. R's ability to create "publication quality" graphics has existed since the very beginning and has generally been better than competing packages. Today, with many more visualization packages available than before, that trend continues.
 
-Finally, one of the joys of using R has nothing to do with the language itself, but rather with the active and vibrant user community. In many ways, a language is successful inasmuch as it creates a platform with which many people can create new things. R is that platform and thousands of people around the world have come together to make contributions to R, to develop packages, and help each other use R for all kinds of applications. The R-help and R-devel mailing lists have been highly active for over a decade now and there is considerable activity on web sites like Stack Overflow, Twitter [#rstats](https://twitter.com/search?q=%23rstats), [#rtistry](https://twitter.com/search?q=%23rtistry), and [Reddit](https://www.reddit.com/r/rstats/).
+Finally, one of the joys of using R has nothing to do with the language itself, but rather with the **active and vibrant user community**. In many ways, a language is successful inasmuch as it creates a platform with which many people can create new things. 
+
+R is that platform and thousands of people around the world have come together to make contributions to R, to develop packages, and help each other use R for all kinds of applications. 
+
+The R-help and R-devel mailing lists have been highly active for over a decade now and there is considerable activity on web sites like Stack Overflow, Twitter [#rstats](https://twitter.com/search?q=%23rstats), [#rtistry](https://twitter.com/search?q=%23rtistry), and [Reddit](https://www.reddit.com/r/rstats/).
 
 ### Free Software
 
@@ -100,7 +103,9 @@ The R system is divided into 2 conceptual parts:
 
 2.  Everything else.
 
-R functionality is divided into a number of *packages*.
+R functionality is divided into a number of **packages**.
+
+Packages are installable pieces of software that contain functions for you use in your own data analyses. 
 
 -   The "base" R system contains, among other things, the `base` package which is required to run R and contains the most fundamental functions.
 
@@ -141,7 +146,7 @@ The file/plot/pkg viewer is a handy browser for your current files, like Finder,
 -   Once you have R installed, install the free version of [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/). Again, make sure it's a recent version.
 
 ::: callout-tip
-Installing R and RStudio should be fairly straightforward. However, a great set of detailed instructions is in Rafael Irizarry's `dsbook`
+Installing R and RStudio should be fairly straightforward. However, a great set of detailed instructions is in Rafael Irizarry's `dsbook`:
 
 -   <https://rafalab.github.io/dsbook/installing-r-rstudio.html>
 :::
@@ -174,7 +179,7 @@ Additionally, not saving your history means that you won't be relying on things 
 
 ### Installing and loading R packages
 
-As we discussed, most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not. 
+As we discussed, most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not.
 
 The "official" place for packages is the [CRAN website](https://cran.r-project.org/web/packages/available_packages_by_name.html). If you are interested in packages on a specific topic, the [CRAN task views](http://cran.r-project.org/web/views/) provide curated descriptions of packages sorted by topic.
 
@@ -215,7 +220,6 @@ It is very common these days for packages to be developed on GitHub. It is possi
 #| echo: true
 remotes::install_github()
 ```
-
 
 You only need to install a package once, unless you upgrade/re-install R. Once installed, you still need to load the package before you can use it. That has to happen every time you start a new R session. You do that using the `library()` command. For instance to load the `ggplot2` package, type
 
