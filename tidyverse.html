@@ -361,17 +361,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code> [1] "_book"                    "_freeze"                 
  [3] "_quarto.yml"              "cover.png"               
  [5] "cshlcg2022.Rproj"         "data"                    
- [7] "exercises-01.html"        "exercises-01.qmd"        
- [9] "exercises-02.html"        "exercises-02.qmd"        
-[11] "exercises-03.qmd"         "exercises-04.qmd"        
-[13] "figures"                  "index.html"              
-[15] "index.qmd"                "intro-to-bioc.qmd"       
-[17] "intro-to-r.html"          "intro-to-r.qmd"          
-[19] "intro-to-single-cell.qmd" "references.bib"          
-[21] "references.qmd"           "reproducible-res_files"  
-[23] "reproducible-res.html"    "reproducible-res.qmd"    
-[25] "site_libs"                "tidyverse_files"         
-[27] "tidyverse.qmd"            "tidyverse.rmarkdown"     </code></pre>
+ [7] "exercises-01.qmd"         "exercises-02.qmd"        
+ [9] "exercises-03.qmd"         "exercises-04.qmd"        
+[11] "figures"                  "index.qmd"               
+[13] "intro-to-bioc.qmd"        "intro-to-r.qmd"          
+[15] "intro-to-single-cell.qmd" "references.bib"          
+[17] "references.qmd"           "reproducible-res.qmd"    
+[19] "tidyverse.qmd"            "tidyverse.rmarkdown"     </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="fu">here</span>(<span class="st">"data"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -479,7 +475,19 @@ dbl (1): Standing
 <section id="how-tibbles-differ-from-data.frame" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="how-tibbles-differ-from-data.frame"><span class="header-section-number">3.3.2</span> How tibbles differ from <code>data.frame</code></h3>
 <p>There are a number of differences between tibbles and <code>data.frames</code>.</p>
-<p><strong>Note</strong>: To see a full vignette about tibbles and how they differ from data.frame, you will want to execute <code>vignette("tibble")</code> and read through that vignette.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To see a full vignette about tibbles and how they differ from data.frame, you will want to execute <code>vignette("tibble")</code> and read through that vignette.</p>
+</div>
+</div>
 <p>We will summarize some of the most important points here:</p>
 <ul>
 <li><strong>Input type remains unchanged</strong> - <code>data.frame</code> is notorious for treating strings as factors; this will not happen with tibbles</li>
@@ -1108,16 +1116,16 @@ Example
 <pre><code># A tibble: 10 × 10
    city   tmpd dewpoint date        pm25 pm10tme…¹ o3tme…² no2tm…³ pm25d…⁴  year
    &lt;chr&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;date&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
- 1 chic   22       12.7 2000-01-17  11.7      23.5   17.9     20.1   -4.53  2000
- 2 chic   86.5     74.8 1995-08-12  NA        58.5   43.4     24.6   NA     1995
- 3 chic   33       23.8 2000-03-02   7        11.5   25.8     19.2   -9.23  2000
- 4 chic   81.5     68.8 1991-09-15  NA        34.3   22.2     16.9   NA     1991
- 5 chic   46       30.4 1990-04-08  NA        28     21.4     31.9   NA     1990
- 6 chic   36       30.4 2004-12-04  14.4      28      7.57    22.8   -1.83  2004
- 7 chic   48.5     34.9 1992-05-03  NA        34.5   18.1     15.5   NA     1992
- 8 chic   53       38.4 1991-05-07  NA        27     26.0     17.3   NA     1991
- 9 chic   45.5     33.9 1991-10-16  NA        37      9.79    24.5   NA     1991
-10 chic   33.5     26.5 1988-12-24  NA        NA      4.54    24.8   NA     1988
+ 1 chic   35       24.8 1994-11-26  NA        20.5   18.1     17.4   NA     1994
+ 2 chic   32       30   1993-02-07  NA        26.5    6.81    21.5   NA     1993
+ 3 chic   70       60.3 2004-09-01  NA        47.5   25.5     31.7   NA     2004
+ 4 chic   53.5     38.5 1990-09-24  NA        34     16.9     24.9   NA     1990
+ 5 chic   62.5     44.2 1990-05-28  NA        28     40.8     14.2   NA     1990
+ 6 chic   58       48.4 1998-10-15  14.8      26.5    7.40    27.1   -1.43  1998
+ 7 chic   40.5     37.2 1996-04-29  NA        14     21.0     23.6   NA     1996
+ 8 chic   38       29.2 1987-11-18  NA        NA     10.3     15.7   NA     1987
+ 9 chic   77       65.5 1998-07-18  NA        52.5   32.9     31.4   NA     1998
+10 chic   79.5     56.8 1988-07-05  NA        NA     57.7     51.4   NA     1988
 # … with abbreviated variable names ¹​pm10tmean2, ²​o3tmean2, ³​no2tmean2,
 #   ⁴​pm25detrend</code></pre>
 </div>
